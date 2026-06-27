@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account – CIL Solar Energy Solutions</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            line-height: 1.5;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(22px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        
+        }
+        
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0f2b5e;
+        }
+        
+        .logo-text span {
+            color: #f18f01;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .nav-links > a {
+            color: #475569;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        
+        .nav-links > a:hover,
+        .nav-links > a.active {
+            color: #f18f01;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0f2b5e;
+        }
+        
+        /* Register Container */
+        .register-container {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 0;
+        }
+        
+        .register-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 550px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .register-header {
+            background: linear-gradient(135deg, #0f2b5e 0%, #1e4a7a 100%);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .register-header h1 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .register-header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .register-body {
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 0.9rem;
+        }
+        
+        .form-label.required::after {
+            content: '*';
+            color: #ef4444;
+            margin-left: 0.25rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #f18f01;
+            box-shadow: 0 0 0 3px rgba(241, 143, 1, 0.1);
+        }
+        
+        .input-group {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #94a3b8;
+            background: none;
+            border: none;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .account-type {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .account-option {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .account-option:hover {
+            border-color: #f18f01;
+        }
+        
+        .account-option.selected {
+            border-color: #f18f01;
+            background: #fff7ed;
+        }
+        
+        .account-option i {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+        
+        .account-option span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .form-check input {
+            width: 1rem;
+            height: 1rem;
+            accent-color: #f18f01;
+        }
+        
+        .form-check label {
+            font-size: 0.85rem;
+            color: #475569;
+        }
+        
+        .form-check a {
+            color: #f18f01;
+            text-decoration: none;
+        }
+        
+        .btn-register {
+            width: 100%;
+            padding: 0.875rem;
+            background: linear-gradient(135deg, #f18f01 0%, #f59e0b 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+        
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(241, 143, 1, 0.3);
+        }
+        
+        .divider {
+            position: relative;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e2e8f0;
+        }
+        
+        .divider span {
+            position: relative;
+            background: white;
+            padding: 0 1rem;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        
+        .social-register {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-btn {
+            flex: 1;
+            padding: 0.75rem;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-btn:hover {
+            background: #e2e8f0;
+        }
+        
+        .login-prompt {
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .login-prompt a {
+            color: #f18f01;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .login-prompt a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0f2b5e;
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-about h3, .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-about p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #f18f01;
+            transform: translateY(-3px);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #f18f01;
+        }
+        
+        .footer-contact .contact-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact .contact-item i {
+            color: #f18f01;
+            width: 20px;
+            margin-top: 0.2rem;
+        }
+        
+        .footer-contact .contact-item small {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 0.2rem;
+        }
+        
+        .footer-newsletter {
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .newsletter-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .newsletter-text {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .newsletter-text i {
+            color: #f18f01;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .newsletter-form input {
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            width: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #94a3b8;
+        }
+        
+        .newsletter-form button {
+            padding: 0.6rem 1.2rem;
+            background: #f18f01;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #e07d00;
+            transform: translateY(-2px);
+        }
+        
+        .footer-bottom {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-bottom-content p {
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .footer-bottom-links a {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+        
+        .footer-bottom-links a:hover {
+            color: #f18f01;
+        }
+        
+        .payment-methods {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+        
+        .payment-methods i {
+            font-size: 1.2rem;
+            margin-left: 0.75rem;
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+        
+        .payment-methods i:hover {
+            color: #f18f01;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .newsletter-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 2rem;
+                flex-direction: column;
+                gap: 1rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .register-body {
+                padding: 1.5rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .account-type {
+                flex-direction: column;
+            }
+            .social-register {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .newsletter-form {
+                flex-direction: column;
+                width: 100%;
+            }
+            .newsletter-form input {
+                width: 100%;
+            }
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="logo.jpeg" alt="CIL Solar" class="logo-img" style="border-radius: 70px;">
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="shop.html">Shop</a>
+                <a href="partnership.html">Partners</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="login.html" class="active">Register</a>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- REGISTER CONTAINER -->
+<div class="register-container">
+    <div class="register-card">
+        <div class="register-header">
+            <h1>Create Account</h1>
+            <p>Join CIL Solar and power your future with clean energy</p>
+        </div>
+        
+        <div class="register-body">
+            <!-- Account Type Selection -->
+            <div class="account-type">
+                <div class="account-option selected" onclick="selectAccountType('individual')" id="individualOption">
+                    <i class="fas fa-user"></i>
+                    <span>Individual / Homeowner</span>
+                </div>
+                <div class="account-option" onclick="selectAccountType('business')" id="businessOption">
+                    <i class="fas fa-building"></i>
+                    <span>Business / Partner</span>
+                </div>
+            </div>
+            
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required">First Name</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label required">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="businessNameGroup" style="display: none;">
+                    <label class="form-label">Business/Company Name</label>
+                    <input type="text" class="form-control" id="businessName">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label required">Email Address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label required">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="0800 123 4567" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required">Password</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                                <i class="fas fa-eye-slash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label required">Confirm Password</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">
+                                <i class="fas fa-eye-slash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-check">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">I agree to the <a href="../terms-of-use.html">Terms of Service</a> and <a href="../privacy-policy.html">Privacy Policy</a></label>
+                </div>
+                
+                <div class="form-check">
+                    <input type="checkbox" id="newsletter">
+                    <label for="newsletter">Subscribe to newsletter for solar tips and offers</label>
+                </div>
+                
+                <button type="submit" class="btn-register">Create Account →</button>
+            </form>
+            
+            <div class="divider">
+                <span>Or sign up with</span>
+            </div>
+            
+            <div class="social-register">
+                <button class="social-btn" onclick="socialRegister('google')">
+                    <i class="fab fa-google"></i> Google
+                </button>
+                <button class="social-btn" onclick="socialRegister('facebook')">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+            </div>
+            
+            <div class="login-prompt">
+                Already have an account? <a href="login.html">Sign in →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Company Info -->
+            <div class="footer-about">
+                <h3>CIL <span style="color: #f18f01;">Solar</span></h3>
+                <p>CIL Solar Energy Solutions is a division of Collaborative Investment Ltd, dedicated to professional management of solar energy across all sectors — from agribusiness to hospitality, IT to diaspora asset management.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../sectors.html">All Sectors</a></li>
+                    <li><a href="../shop.html">Shop Products</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../blog.html">Blog & News</a></li>
+                </ul>
+            </div>
+            
+            <!-- Key Sectors -->
+            <div class="footer-links">
+                <h4>Key Sectors</h4>
+                <ul>
+                    <li><a href="../sectors/agribusiness.html">Agribusiness</a></li>
+                    <li><a href="../sectors/betting-shops.html">Betting Shops</a></li>
+                    <li><a href="../sectors/places-of-worship.html">Places of Worship</a></li>
+                    <li><a href="../sectors/roadside-kiosks.html">Roadside Kiosks</a></li>
+                    <li><a href="../sectors/food-vendors.html">Food Vendors</a></li>
+                    <li><a href="../sectors/residential.html">Residential Homes</a></li>
+                    <li><a href="../sectors/hotel.html">Hotels & Hospitality</a></li>
+                </ul>
+            </div>
+            
+            <!-- Support -->
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="../partnership.html">Become a Partner</a></li>
+                    <li><a href="../partner/login.html">Partner Login</a></li>
+                    <li><a href="register.html">Create Account</a></li>
+                    <li><a href="login.html">Account Login</a></li>
+                    <li><a href="../faq.html">FAQs</a></li>
+                    <li><a href="../warranty.html">Warranty Info</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Us -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <span>0800 SOLAR CIL</span>
+                        <small>Mon-Fri, 8am - 6pm</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span>solar@cilholding.ng</span>
+                        <small>Sales & Support</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span>Lagos, Nigeria</span>
+                        <small>Head Office</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <span>Nationwide Installation</span>
+                        <small>We deliver across Nigeria</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter & Footer Bottom -->
+        <div class="footer-newsletter">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-text">
+                    <i class="fas fa-envelope"></i>
+                    <span>Get the latest solar news and offers</span>
+                </div>
+                <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 CIL Solar Energy Solutions — A Division of Collaborative Investment Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                    <a href="../terms-of-use.html">Terms of Use</a>
+                    <a href="../cookie-policy.html">Cookie Policy</a>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <span>Secure Payments:</span>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fas fa-university"></i>
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    let selectedAccountType = 'individual';
+    
+    function selectAccountType(type) {
+        selectedAccountType = type;
+        const individualOption = document.getElementById('individualOption');
+        const businessOption = document.getElementById('businessOption');
+        const businessNameGroup = document.getElementById('businessNameGroup');
+        
+        if (type === 'individual') {
+            individualOption.classList.add('selected');
+            businessOption.classList.remove('selected');
+            businessNameGroup.style.display = 'none';
+        } else {
+            businessOption.classList.add('selected');
+            individualOption.classList.remove('selected');
+            businessNameGroup.style.display = 'block';
+        }
+    }
+    
+    function togglePassword(fieldId) {
+        const field = document.getElementById(fieldId);
+        const toggleBtn = field.parentElement.querySelector('.toggle-password i');
+        
+        if (field.type === 'password') {
+            field.type = 'text';
+            toggleBtn.classList.remove('fa-eye-slash');
+            toggleBtn.classList.add('fa-eye');
+        } else {
+            field.type = 'password';
+            toggleBtn.classList.remove('fa-eye');
+            toggleBtn.classList.add('fa-eye-slash');
+        }
+    }
+    
+    function handleRegister(event) {
+        event.preventDefault();
+        
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const agreeTerms = document.getElementById('agreeTerms').checked;
+        
+        // Validation
+        if (!firstName || !lastName || !email || !phone || !password) {
+            alert('Please fill in all required fields.');
+            return false;
+        }
+        
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return false;
+        }
+        
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters.');
+            return false;
+        }
+        
+        if (!agreeTerms) {
+            alert('Please agree to the Terms of Service and Privacy Policy.');
+            return false;
+        }
+        
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+        
+        const phoneRegex = /^[0-9]{10,14}$/;
+        const cleanPhone = phone.replace(/\D/g, '');
+        if (!phoneRegex.test(cleanPhone)) {
+            alert('Please enter a valid phone number (10-14 digits).');
+            return false;
+        }
+        
+        // Store user data (demo)
+        const userData = {
+            firstName,
+            lastName,
+            email,
+            phone: cleanPhone,
+            accountType: selectedAccountType,
+            businessName: selectedAccountType === 'business' ? document.getElementById('businessName').value : '',
+            createdAt: new Date().toISOString()
+        };
+        
+        localStorage.setItem('cilSolarUser', JSON.stringify(userData));
+        localStorage.setItem('cilSolarLoggedIn', 'true');
+        
+        const newsletter = document.getElementById('newsletter').checked;
+        if (newsletter) {
+            localStorage.setItem('cilSolarNewsletter', email);
+        }
+        
+        alert(`✅ Account created successfully!\n\nWelcome to CIL Solar, ${firstName} ${lastName}!\n\nYour account has been created. You can now log in and start exploring our solar solutions.\n\nA verification email has been sent to ${email}. Please verify your email to access all features.`);
+        
+        // Redirect to login page
+        window.location.href = 'login.html';
+        
+        return false;
+    }
+    
+    function socialRegister(provider) {
+        alert(`🔐 ${provider.charAt(0).toUpperCase() + provider.slice(1)} sign up coming soon!\n\nThis feature will be available in the next update.`);
+    }
+    
+    function subscribeNewsletter(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input').value;
+        alert(`✅ Subscribed!\n\n${email} has been added to our newsletter list. You'll receive updates on new products, promotions, and solar energy tips.`);
+        event.target.reset();
+        return false;
+    }
+    
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '80px';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '2rem';
+                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                navLinks.style.zIndex = '1000';
+            }
+        });
+    }
+    
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks) {
+            navLinks.style.display = '';
+            navLinks.style.flexDirection = '';
+            navLinks.style.position = '';
+            navLinks.style.padding = '';
+            navLinks.style.backgroundColor = '';
+            navLinks.style.boxShadow = '';
+        }
+    });
+</script>
+</body>
+</html>

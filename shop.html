@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Solar Products – CIL Solar Energy Solutions</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            line-height: 1.5;
+            overflow-x: hidden;
+            background: #fafbfc;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #0f2b5e;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: #0f2b5e;
+            margin-bottom: 1rem;
+        }
+        
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #64748b;
+            text-align: center;
+        }
+        
+        a {
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #f18f01 0%, #f59e0b 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(241, 143, 1, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #f18f01;
+            color: #f18f01;
+        }
+        
+        .btn-outline:hover {
+            background: #f18f01;
+            color: white;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+             background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(22px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0f2b5e;
+        }
+        
+        .logo-text span {
+            color: #f18f01;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .nav-links > a {
+            color: #475569;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        
+        .nav-links > a:hover, .nav-links > a.active {
+            color: #f18f01;
+        }
+        
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown > a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .dropdown > a i {
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        
+        .dropdown:hover > a i {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown:hover > a {
+            color: #f18f01;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+        
+        .dropdown-menu a i {
+            width: 20px;
+            color: #94a3b8;
+        }
+        
+        .dropdown-menu a:hover {
+            background: #fff7ed;
+            color: #f18f01;
+        }
+        
+        .dropdown-divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 0.5rem 0;
+        }
+        
+        .dropdown-section {
+            padding: 0.5rem 0;
+        }
+        
+        .dropdown-title {
+            padding: 0.5rem 1.25rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+        
+        .dropdown-menu-right {
+            left: auto;
+            right: 0;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0f2b5e;
+        }
+        
+        /* Cart Button */
+        .cart-btn {
+            position: relative;
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .cart-btn:hover {
+            background: #e2e8f0;
+        }
+        
+        .cart-count {
+            background: #f18f01;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+        }
+        
+        /* Shop Hero */
+        .shop-hero {
+            background: linear-gradient(135deg, #0f2b5e 0%, #1e4a7a 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .shop-hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .shop-hero p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        /* Search & Filter */
+        .shop-header {
+            padding: 2rem 0;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .search-section {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .search-box {
+            flex: 2;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+        
+        .search-box button {
+            padding: 0.75rem 1.5rem;
+            background: #f18f01;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .results-count {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        
+        /* Products Grid */
+        .products-section {
+            padding: 3rem 0;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 180px;
+            background: #fef3c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #f18f01;
+        }
+        
+        .product-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background: #f18f01;
+            color: white;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-details {
+            padding: 1rem;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: #0f2b5e;
+        }
+        
+        .product-category {
+            font-size: 0.7rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #f18f01;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-description {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn-cart {
+            flex: 2;
+            padding: 0.5rem;
+            background: #f18f01;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        .btn-details {
+            flex: 1;
+            padding: 0.5rem;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+        
+        .page-item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .page-item:hover {
+            border-color: #f18f01;
+            color: #f18f01;
+        }
+        
+        .page-item.active {
+            background: #0f2b5e;
+            color: white;
+            border-color: #0f2b5e;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            transition: right 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cart-sidebar.open {
+            right: 0;
+        }
+        
+        .cart-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+        
+        .cart-footer {
+            padding: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #f18f01;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0f2b5e;
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-about h3, .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-about p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #f18f01;
+            transform: translateY(-3px);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #f18f01;
+        }
+        
+        .footer-contact .contact-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact .contact-item i {
+            color: #f18f01;
+            width: 20px;
+        }
+        
+        .footer-contact .contact-item small {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+        
+        .footer-newsletter {
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .newsletter-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .newsletter-text {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #94a3b8;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .newsletter-form input {
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 8px;
+            width: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #94a3b8;
+        }
+        
+        .newsletter-form button {
+            padding: 0.6rem 1.2rem;
+            background: #f18f01;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .footer-bottom {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .footer-bottom-links a {
+            color: #94a3b8;
+            font-size: 0.75rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 2rem;
+                flex-direction: column;
+                gap: 1rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .search-section {
+                flex-direction: column;
+            }
+            .search-box {
+                width: 100%;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .newsletter-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.jpeg" alt="CIL Solar" class="logo-img" style="border-radius: 70px;">
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="partnership.html">Partners</a>
+                <a href="contact.html">Contact</a>
+                
+                <div class="dropdown">
+                    <a href="#">Account <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="dropdown-section">
+                            <div class="dropdown-title">User</div>
+                            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            <a href="login.html"><i class="fas fa-user-plus"></i> Create Account</a>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-section">
+                            <div class="dropdown-title">Partners</div>
+                            <a href="patnerlogin.html"><i class="fas fa-building"></i> Partner Login</a>
+                            <a href="partnership.html"><i class="fas fa-handshake"></i> Become a Partner</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Cart Sidebar -->
+<div class="overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+        <p style="text-align: center; color: #64748b; padding: 2rem;">Your cart is empty</p>
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">₦0</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+</div>
+
+<!-- SHOP HERO -->
+<section class="shop-hero">
+    <div class="container">
+        <h1>Solar Products Shop</h1>
+        <p>Complete solar solutions for every sector — from complete systems to individual components</p>
+    </div>
+</section>
+
+<!-- SEARCH SECTION -->
+<section class="shop-header">
+    <div class="container">
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search products by name, category, or description..." onkeyup="searchProducts()">
+                <button onclick="searchProducts()"><i class="fas fa-search"></i> Search</button>
+            </div>
+            <div class="results-count">
+                Showing <span id="visibleCount">48</span> products
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="products-section">
+    <div class="container">
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded dynamically -->
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+            <div class="page-item" onclick="changePage(1)">1</div>
+            <div class="page-item" onclick="changePage(2)">2</div>
+            <div class="page-item" onclick="changePage(3)">3</div>
+            <div class="page-item" onclick="changePage(4)">4</div>
+        </div>
+        
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>No Products Found</h3>
+            <p>No products match your search criteria. Try a different keyword.</p>
+            <button class="btn-primary" onclick="clearSearch()" style="margin-top: 1rem;">Clear Search</button>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Company Info -->
+            <div class="footer-about">
+                <h3>CIL <span style="color: #f18f01;">Solar</span></h3>
+                <p>CIL Solar Energy Solutions is a division of Collaborative Investment Ltd, dedicated to professional management of solar energy across all sectors — from agribusiness to hospitality, IT to diaspora asset management.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="sectors.html">All Sectors</a></li>
+                    <li><a href="shop.html">Shop Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog & News</a></li>
+                </ul>
+            </div>
+            
+            <!-- Key Sectors -->
+            <div class="footer-links">
+                <h4>Key Sectors</h4>
+                <ul>
+                    <li><a href="sectors/agribusiness.html">Agribusiness</a></li>
+                    <li><a href="sectors/betting-shops.html">Betting Shops</a></li>
+                    <li><a href="sectors/places-of-worship.html">Places of Worship</a></li>
+                    <li><a href="sectors/roadside-kiosks.html">Roadside Kiosks</a></li>
+                    <li><a href="sectors/food-vendors.html">Food Vendors</a></li>
+                    <li><a href="sectors/residential.html">Residential Homes</a></li>
+                    <li><a href="sectors/hotel.html">Hotels & Hospitality</a></li>
+                </ul>
+            </div>
+            
+            <!-- Support -->
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="partnership.html">Become a Partner</a></li>
+                    <li><a href="partner/login.html">Partner Login</a></li>
+                    <li><a href="account/register.html">Create Account</a></li>
+                    <li><a href="account/login.html">Account Login</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="warranty.html">Warranty Info</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Us -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <span>0800 SOLAR CIL</span>
+                        <small>Mon-Fri, 8am - 6pm</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span>solar@cilholding.ng</span>
+                        <small>Sales & Support</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span>Lagos, Nigeria</span>
+                        <small>Head Office</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <span>Nationwide Installation</span>
+                        <small>We deliver across Nigeria</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter & Footer Bottom -->
+        <div class="footer-newsletter">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-text">
+                    <i class="fas fa-envelope"></i>
+                    <span>Get the latest solar news and offers</span>
+                </div>
+                <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 CIL Solar Energy Solutions — A Division of Collaborative Investment Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <span>Secure Payments:</span>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fas fa-university"></i>
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Footer Styles - All sections in one line */
+    .footer {
+        background: #0f2b5e;
+        color: white;
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr 1fr 1.5fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .footer-about h3, .footer-links h4, .footer-contact h4 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .footer-about p {
+        color: #94a3b8;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+        background: #f18f01;
+        transform: translateY(-3px);
+    }
+    
+    .footer-links ul {
+        list-style: none;
+    }
+    
+    .footer-links ul li {
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-links ul li a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+    }
+    
+    .footer-links ul li a:hover {
+        color: #f18f01;
+    }
+    
+    .footer-contact .contact-item {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        color: #94a3b8;
+        font-size: 0.9rem;
+    }
+    
+    .footer-contact .contact-item i {
+        color: #f18f01;
+        width: 20px;
+        margin-top: 0.2rem;
+    }
+    
+    .footer-contact .contact-item small {
+        display: block;
+        font-size: 0.7rem;
+        opacity: 0.7;
+        margin-top: 0.2rem;
+    }
+    
+    /* Newsletter Section */
+    .footer-newsletter {
+        margin-top: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .newsletter-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .newsletter-text {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #94a3b8;
+        font-size: 0.9rem;
+    }
+    
+    .newsletter-text i {
+        color: #f18f01;
+        font-size: 1.2rem;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .newsletter-form input {
+        padding: 0.6rem 1rem;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        width: 250px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    
+    .newsletter-form input::placeholder {
+        color: #94a3b8;
+    }
+    
+    .newsletter-form button {
+        padding: 0.6rem 1.2rem;
+        background: #f18f01;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        color: white;
+        transition: all 0.3s;
+    }
+    
+    .newsletter-form button:hover {
+        background: #e07d00;
+        transform: translateY(-2px);
+    }
+    
+    /* Footer Bottom */
+    .footer-bottom {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-bottom-content p {
+        color: #64748b;
+        font-size: 0.8rem;
+    }
+    
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    .footer-bottom-links a {
+        color: #94a3b8;
+        font-size: 0.8rem;
+        text-decoration: none;
+    }
+    
+    .footer-bottom-links a:hover {
+        color: #f18f01;
+    }
+    
+    .payment-methods {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #94a3b8;
+    }
+    
+    .payment-methods i {
+        font-size: 1.2rem;
+        margin-left: 0.75rem;
+        color: #94a3b8;
+        transition: color 0.3s;
+    }
+    
+    .payment-methods i:hover {
+        color: #f18f01;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .newsletter-wrapper {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer-bottom-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .newsletter-form {
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+        }
+        
+        .footer-bottom-links {
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+        }
+    }
+</style>
+
+<script>
+    function subscribeNewsletter(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input').value;
+        alert(`✅ Subscribed!\n\n${email} has been added to our newsletter list. You'll receive updates on new products, promotions, and solar energy tips.`);
+        event.target.reset();
+        return false;
+    }
+</script>
+
+<script>
+    // Product Database
+    const allProducts = [
+        // Solar Panels
+        { id: 1, name: "Monocrystalline Solar Panel 550W", category: "Solar Panels", price: 85000, description: "High-efficiency monocrystalline panel, 25-year warranty", image: "solar-panel", badge: "Best Seller" },
+        { id: 2, name: "Polycrystalline Solar Panel 400W", category: "Solar Panels", price: 65000, description: "Affordable polycrystalline panel, 20-year warranty", image: "solar-panel", badge: "" },
+        { id: 3, name: "Flexible Solar Panel 200W", category: "Solar Panels", price: 45000, description: "Lightweight flexible panel for curved surfaces", image: "solar-panel", badge: "" },
+        { id: 4, name: "Solar Panel 150W Portable", category: "Solar Panels", price: 35000, description: "Foldable portable panel for camping and travel", image: "solar-panel", badge: "Portable" },
+        
+        // Batteries
+        { id: 5, name: "Lithium Battery 12V 200Ah", category: "Batteries", price: 350000, description: "Deep cycle lithium battery, 10-year lifespan", image: "battery", badge: "Premium" },
+        { id: 6, name: "Lithium Battery 12V 100Ah", category: "Batteries", price: 180000, description: "Compact lithium battery for home use", image: "battery", badge: "" },
+        { id: 7, name: "Gel Battery 12V 200Ah", category: "Batteries", price: 150000, description: "Maintenance-free gel battery", image: "battery", badge: "" },
+        { id: 8, name: "Lead Acid Battery 12V 100Ah", category: "Batteries", price: 65000, description: "Economical lead acid battery", image: "battery", badge: "Budget" },
+        
+        // Inverters
+        { id: 9, name: "Hybrid Inverter 5kW", category: "Inverters", price: 450000, description: "Pure sine wave hybrid inverter with solar input", image: "inverter", badge: "Popular" },
+        { id: 10, name: "Hybrid Inverter 3.5kW", category: "Inverters", price: 320000, description: "Compact hybrid inverter for small homes", image: "inverter", badge: "" },
+        { id: 11, name: "Off-Grid Inverter 2kW", category: "Inverters", price: 180000, description: "Off-grid inverter with battery charger", image: "inverter", badge: "" },
+        { id: 12, name: "Micro Inverter 600W", category: "Inverters", price: 65000, description: "Micro inverter for small solar systems", image: "inverter", badge: "" },
+        
+        // Charge Controllers
+        { id: 13, name: "MPPT Charge Controller 60A", category: "Charge Controllers", price: 85000, description: "Maximum Power Point Tracking, high efficiency", image: "controller", badge: "" },
+        { id: 14, name: "MPPT Charge Controller 40A", category: "Charge Controllers", price: 55000, description: "Efficient MPPT charge controller", image: "controller", badge: "" },
+        { id: 15, name: "PWM Charge Controller 30A", category: "Charge Controllers", price: 25000, description: "Affordable PWM charge controller", image: "controller", badge: "Budget" },
+        
+        // Complete Solar Systems
+        { id: 16, name: "Complete Home Solar Kit 3kW", category: "Complete Systems", price: 950000, description: "Full home solar system with 3kW inverter, panels, battery", image: "system", badge: "Best Seller" },
+        { id: 17, name: "Betting Shop Solar Kit", category: "Complete Systems", price: 280000, description: "24/7 power for betting shops - runs TV, decoders, routers", image: "system", badge: "Business Booster" },
+        { id: 18, name: "Roadside Kiosk Solar Kit", category: "Complete Systems", price: 95000, description: "Lighting and phone charging for kiosks", image: "system", badge: "" },
+        { id: 19, name: "Food Vendor Solar Kit", category: "Complete Systems", price: 145000, description: "Powers freezers, blenders, and lighting", image: "system", badge: "" },
+        { id: 20, name: "Student Portable Solar Kit", category: "Complete Systems", price: 45000, description: "Portable solar for hostels - lights, laptop, phone charging", image: "system", badge: "Student" },
+        { id: 21, name: "Church/Mosque Solar System", category: "Complete Systems", price: 650000, description: "Complete solar for places of worship - sound, lighting, fans", image: "system", badge: "" },
+        { id: 22, name: "Hotel Solar System 10kW", category: "Complete Systems", price: 1850000, description: "Premium solar for hotels and hospitality", image: "system", badge: "Premium" },
+        { id: 23, name: "Farm Solar System", category: "Complete Systems", price: 750000, description: "Solar for water pumping, cold storage, farm ops", image: "system", badge: "Productivity" },
+        { id: 24, name: "IT Server Solar System", category: "Complete Systems", price: 550000, description: "Zero-interruption power for servers and IT equipment", image: "system", badge: "Critical Power" },
+        
+        // Solar Security
+        { id: 25, name: "Solar Security Camera 4MP", category: "Security", price: 85000, description: "Wireless solar security camera with night vision", image: "camera", badge: "" },
+        { id: 26, name: "Solar Security Camera 2MP", category: "Security", price: 55000, description: "Budget solar security camera", image: "camera", badge: "" },
+        { id: 27, name: "Solar Floodlight 100W", category: "Security", price: 18000, description: "Bright solar floodlight for security", image: "light", badge: "" },
+        { id: 28, name: "Solar Security System 4-Camera", category: "Security", price: 280000, description: "Complete 4-camera solar security system", image: "camera", badge: "Popular" },
+        
+        // Solar Lights
+        { id: 29, name: "Solar Street Light 100W", category: "Lighting", price: 85000, description: "Commercial solar street light", image: "light", badge: "" },
+        { id: 30, name: "Solar Garden Light", category: "Lighting", price: 5500, description: "Decorative solar garden light", image: "light", badge: "" },
+        { id: 31, name: "Solar Indoor Light Kit", category: "Lighting", price: 12500, description: "Indoor solar lighting with 3 bulbs", image: "light", badge: "" },
+        { id: 32, name: "Solar Motion Sensor Light", category: "Lighting", price: 8500, description: "Motion-activated solar security light", image: "light", badge: "" },
+        
+        // Cables & Accessories
+        { id: 33, name: "Solar Cable 4mm (50m)", category: "Cables", price: 18000, description: "High-quality solar cable", image: "cable", badge: "" },
+        { id: 34, name: "Solar Cable 6mm (50m)", category: "Cables", price: 25000, description: "Heavy-duty solar cable", image: "cable", badge: "" },
+        { id: 35, name: "MC4 Connectors (Pair)", category: "Accessories", price: 1500, description: "Solar panel connectors", image: "connector", badge: "" },
+        { id: 36, name: "Solar Mounting Kit", category: "Accessories", price: 15000, description: "Complete mounting hardware", image: "mount", badge: "" },
+        { id: 37, name: "Breaker Box", category: "Accessories", price: 8500, description: "Solar breaker box with fuses", image: "breaker", badge: "" },
+        { id: 38, name: "Solar Fuse Holder", category: "Accessories", price: 2000, description: "Fuse holder for solar protection", image: "fuse", badge: "" },
+        
+        // Solar Appliances
+        { id: 39, name: "Solar Refrigerator 100L", category: "Appliances", price: 280000, description: "Solar direct-drive refrigerator", image: "fridge", badge: "" },
+        { id: 40, name: "Solar Freezer 150L", category: "Appliances", price: 320000, description: "Solar freezer for preservation", image: "freezer", badge: "" },
+        { id: 41, name: "Solar Fan (DC)", category: "Appliances", price: 18000, description: "Energy-efficient DC fan", image: "fan", badge: "" },
+        { id: 42, name: "Solar Water Pump 1HP", category: "Appliances", price: 185000, description: "Solar water pumping system", image: "pump", badge: "" },
+        
+        // Solar Home Systems
+        { id: 43, name: "Residential Solar System 2kW", category: "Home Systems", price: 550000, description: "Complete home solar system", image: "home-system", badge: "" },
+        { id: 44, name: "Residential Solar System 5kW", category: "Home Systems", price: 1200000, description: "Full home solar for larger houses", image: "home-system", badge: "Popular" },
+        
+        // Monitoring & Smart
+        { id: 45, name: "Solar Monitoring System", category: "Monitoring", price: 45000, description: "Remote monitoring via mobile app", image: "monitor", badge: "" },
+        { id: 46, name: "Smart Solar Meter", category: "Monitoring", price: 25000, description: "Track your solar production", image: "meter", badge: "" },
+        
+        // Accessories
+        { id: 47, name: "Solar Inverter Battery Cable Set", category: "Accessories", price: 12000, description: "Complete battery cable set", image: "cable", badge: "" },
+        { id: 48, name: "Solar System Installation Kit", category: "Accessories", price: 35000, description: "Everything needed for installation", image: "kit", badge: "" }
+    ];
+    
+    let currentPage = 1;
+    const itemsPerPage = 12;
+    let filteredProducts = [...allProducts];
+    
+    // Load products on page load
+    function loadProducts() {
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const productsToShow = filteredProducts.slice(start, end);
+        const grid = document.getElementById('productsGrid');
+        const visibleCount = filteredProducts.length;
+        const emptyState = document.getElementById('emptyState');
+        const paginationDiv = document.getElementById('pagination');
+        
+        document.getElementById('visibleCount').textContent = visibleCount;
+        
+        if (visibleCount === 0) {
+            grid.innerHTML = '';
+            emptyState.style.display = 'block';
+            paginationDiv.style.display = 'none';
+            return;
+        }
+        
+        emptyState.style.display = 'none';
+        paginationDiv.style.display = 'flex';
+        
+        grid.innerHTML = productsToShow.map(product => `
+            <div class="product-card" onclick="viewProduct(${product.id})">
+                <div class="product-image">
+                    <i class="fas fa-${product.image}"></i>
+                    ${product.badge ? `<div style="position: absolute; top: 10px; left: 10px;"><span class="product-badge">${product.badge}</span></div>` : ''}
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">${product.name}</h3>
+                    <div class="product-category">${product.category}</div>
+                    <div class="product-price">₦${product.price.toLocaleString()}</div>
+                    <div class="product-description">${product.description.substring(0, 60)}${product.description.length > 60 ? '...' : ''}</div>
+                    <div class="product-actions">
+                        <button class="btn-cart" onclick="event.stopPropagation(); addToCart(${product.id})">Add to Cart</button>
+                        <button class="btn-details" onclick="event.stopPropagation(); viewProduct(${product.id})">Details</button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        
+        updatePagination();
+    }
+    
+    function updatePagination() {
+        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+        const paginationDiv = document.getElementById('pagination');
+        
+        if (totalPages <= 1) {
+            paginationDiv.style.display = 'none';
+            return;
+        }
+        
+        paginationDiv.style.display = 'flex';
+        
+        let pages = [];
+        for (let i = 1; i <= Math.min(totalPages, 5); i++) {
+            pages.push(i);
+        }
+        
+        paginationDiv.innerHTML = pages.map(page => `
+            <div class="page-item ${page === currentPage ? 'active' : ''}" onclick="changePage(${page})">${page}</div>
+        `).join('');
+    }
+    
+    function changePage(page) {
+        currentPage = page;
+        loadProducts();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function searchProducts() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        filteredProducts = allProducts.filter(product => 
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.category.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm)
+        );
+        currentPage = 1;
+        loadProducts();
+    }
+    
+    function clearSearch() {
+        document.getElementById('searchInput').value = '';
+        filteredProducts = [...allProducts];
+        currentPage = 1;
+        loadProducts();
+    }
+    
+    function viewProduct(id) {
+        const product = allProducts.find(p => p.id === id);
+        alert(`🔍 ${product.name}\n\nPrice: ₦${product.price.toLocaleString()}\nCategory: ${product.category}\n\n${product.description}\n\nClick OK to view full details or Add to Cart to purchase.`);
+    }
+    
+    // Cart functionality
+    let cart = [];
+    
+    function loadCart() {
+        const savedCart = localStorage.getItem('cilSolarCart');
+        if (savedCart) {
+            cart = JSON.parse(savedCart);
+            updateCartDisplay();
+        }
+    }
+    
+    function saveCart() {
+        localStorage.setItem('cilSolarCart', JSON.stringify(cart));
+    }
+    
+    function updateCartDisplay() {
+        const cartItemsDiv = document.getElementById('cartItems');
+        const cartTotalSpan = document.getElementById('cartTotal');
+        const cartCountSpan = document.getElementById('cartCount');
+        
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        
+        cartCountSpan.textContent = itemCount;
+        cartTotalSpan.textContent = `₦${total.toLocaleString()}`;
+        
+        if (cart.length === 0) {
+            cartItemsDiv.innerHTML = '<p style="text-align: center; color: #64748b; padding: 2rem;">Your cart is empty</p>';
+            return;
+        }
+        
+        cartItemsDiv.innerHTML = cart.map(item => `
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                <div style="flex:1">
+                    <div style="font-weight:600">${item.name}</div>
+                    <div style="font-size:0.8rem; color:#f18f01;">₦${item.price.toLocaleString()}</div>
+                    <div style="display:flex; gap:0.5rem; margin-top:0.5rem;">
+                        <button style="width:24px; height:24px; background:#f1f5f9; border:none; border-radius:4px; cursor:pointer;" onclick="updateQuantity('${item.name}', -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button style="width:24px; height:24px; background:#f1f5f9; border:none; border-radius:4px; cursor:pointer;" onclick="updateQuantity('${item.name}', 1)">+</button>
+                        <button style="width:24px; height:24px; background:#fee2e2; border:none; border-radius:4px; cursor:pointer;" onclick="removeItem('${item.name}')"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                <div style="font-weight:600;">₦${(item.price * item.quantity).toLocaleString()}</div>
+            </div>
+        `).join('');
+    }
+    
+    function updateQuantity(name, change) {
+        const item = cart.find(i => i.name === name);
+        if (item) {
+            item.quantity += change;
+            if (item.quantity <= 0) {
+                cart = cart.filter(i => i.name !== name);
+            }
+            saveCart();
+            updateCartDisplay();
+        }
+    }
+    
+    function removeItem(name) {
+        cart = cart.filter(i => i.name !== name);
+        saveCart();
+        updateCartDisplay();
+    }
+    
+    function addToCart(id) {
+        const product = allProducts.find(p => p.id === id);
+        const existing = cart.find(item => item.name === product.name);
+        if (existing) {
+            existing.quantity++;
+        } else {
+            cart.push({ name: product.name, price: product.price, quantity: 1 });
+        }
+        saveCart();
+        updateCartDisplay();
+        alert(`${product.name} added to cart!`);
+    }
+    
+    function toggleCart() {
+        const cartSidebar = document.getElementById('cartSidebar');
+        const overlay = document.getElementById('cartOverlay');
+        cartSidebar.classList.toggle('open');
+        overlay.classList.toggle('active');
+    }
+    
+    function checkout() {
+        if (cart.length === 0) {
+            alert('Your cart is empty.');
+            return;
+        }
+        alert('Proceeding to checkout. Total: ₦' + cart.reduce((sum, i) => sum + (i.price * i.quantity), 0).toLocaleString());
+    }
+    
+    function subscribeNewsletter(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input').value;
+        alert(`✅ Subscribed!\n\n${email} has been added to our newsletter list.`);
+        event.target.reset();
+        return false;
+    }
+    
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '80px';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '2rem';
+                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                navLinks.style.zIndex = '1000';
+            }
+        });
+    }
+    
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks) {
+            navLinks.style.display = '';
+            navLinks.style.flexDirection = '';
+            navLinks.style.position = '';
+            navLinks.style.padding = '';
+            navLinks.style.backgroundColor = '';
+            navLinks.style.boxShadow = '';
+        }
+    });
+    
+    // Load cart and products on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        loadCart();
+        loadProducts();
+    });
+</script>
+</body>
+</html>

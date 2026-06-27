@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/all.min.css">
+    <title>Partner Login – CIL Solar Energy Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            line-height: 1.5;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(22px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0f2b5e;
+        }
+        
+        .logo-text span {
+            color: #f18f01;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .nav-links > a {
+            color: #475569;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        
+        .nav-links > a:hover,
+        .nav-links > a.active {
+            color: #f18f01;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0f2b5e;
+        }
+        
+        /* Partner Login Container */
+        .partner-login-container {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 0;
+        }
+        
+        .partner-login-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .partner-header {
+            background: linear-gradient(135deg, #0f2b5e 0%, #1e4a7a 100%);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .partner-header::before {
+            content: '🤝';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .partner-header h1 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .partner-header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .partner-badge {
+            display: inline-block;
+            background: #f18f01;
+            color: #0f2b5e;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .partner-body {
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 0.9rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #f18f01;
+            box-shadow: 0 0 0 3px rgba(241, 143, 1, 0.1);
+        }
+        
+        .input-group {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #94a3b8;
+            background: none;
+            border: none;
+        }
+        
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: #475569;
+        }
+        
+        .checkbox-label input {
+            width: 1rem;
+            height: 1rem;
+            accent-color: #f18f01;
+        }
+        
+        .forgot-link {
+            color: #f18f01;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+        
+        .btn-login {
+            width: 100%;
+            padding: 0.875rem;
+            background: linear-gradient(135deg, #f18f01 0%, #f59e0b 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(241, 143, 1, 0.3);
+        }
+        
+        .divider {
+            position: relative;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e2e8f0;
+        }
+        
+        .divider span {
+            position: relative;
+            background: white;
+            padding: 0 1rem;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        
+        .partner-features {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .partner-features h4 {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            color: #0f2b5e;
+        }
+        
+        .partner-features ul {
+            list-style: none;
+        }
+        
+        .partner-features li {
+            font-size: 0.75rem;
+            color: #64748b;
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .partner-features i {
+            color: #10b981;
+            font-size: 0.7rem;
+        }
+        
+        .apply-prompt {
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .apply-prompt a {
+            color: #f18f01;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .apply-prompt a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Alert */
+        .alert {
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+        
+        .alert-danger {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            max-width: 400px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #f1f5f9;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .modal h3 {
+            color: #0f2b5e;
+            margin-bottom: 1rem;
+        }
+        
+        .modal p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .btn-modal {
+            width: 100%;
+            padding: 0.75rem;
+            background: #f18f01;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0f2b5e;
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-about h3, .footer-links h4, .footer-contact h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-about p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #f18f01;
+            transform: translateY(-3px);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #f18f01;
+        }
+        
+        .footer-contact .contact-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact .contact-item i {
+            color: #f18f01;
+            width: 20px;
+            margin-top: 0.2rem;
+        }
+        
+        .footer-contact .contact-item small {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 0.2rem;
+        }
+        
+        .footer-newsletter {
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .newsletter-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .newsletter-text {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .newsletter-text i {
+            color: #f18f01;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .newsletter-form input {
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            width: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #94a3b8;
+        }
+        
+        .newsletter-form button {
+            padding: 0.6rem 1.2rem;
+            background: #f18f01;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #e07d00;
+            transform: translateY(-2px);
+        }
+        
+        .footer-bottom {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-bottom-content p {
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .footer-bottom-links a {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+        
+        .footer-bottom-links a:hover {
+            color: #f18f01;
+        }
+        
+        .payment-methods {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+        
+        .payment-methods i {
+            font-size: 1.2rem;
+            margin-left: 0.75rem;
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+        
+        .payment-methods i:hover {
+            color: #f18f01;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .newsletter-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 2rem;
+                flex-direction: column;
+                gap: 1rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .partner-body {
+                padding: 1.5rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .newsletter-form {
+                flex-direction: column;
+                width: 100%;
+            }
+            .newsletter-form input {
+                width: 100%;
+            }
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="logo.jpeg" alt="CIL Solar" class="logo-img" style="border-radius: 70px;">
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="shop.html">Shop</a>
+                <a href="partnership.html">Partners</a>
+                <a href="contact.html">Contact</a>
+                <a href="file:///C:/Users/Admin/Desktop/cilsolar/login.html">User Login</a>
+                <a href="patnerlogin.html" class="active">Partner Login</a>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- PARTNER LOGIN CONTAINER -->
+<div class="partner-login-container">
+    <div class="partner-login-card">
+        <div class="partner-header">
+            <h1>Partner Portal</h1>
+            <p>Access your manufacturer & distributor dashboard</p>
+            <div class="partner-badge">Solar Manufacturer & Distributor Portal</div>
+        </div>
+        
+        <div class="partner-body">
+            <!-- Alert Message -->
+            <div class="alert alert-danger" id="errorAlert">
+                <i class="fas fa-exclamation-circle"></i> <span id="errorMessage">Invalid credentials</span>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="partnerLoginForm" onsubmit="return handlePartnerLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Partner Email or Partner ID</label>
+                    <input type="text" class="form-control" id="partnerId" placeholder="Enter your registered email or Partner ID" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword()">
+                            <i class="fas fa-eye-slash"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe"> Remember me
+                    </label>
+                    <a href="#" class="forgot-link" onclick="openForgotModal()">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="btn-login">Access Partner Portal →</button>
+            </form>
+            
+            <div class="partner-features">
+                <h4>Partner Portal Features:</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> View sales analytics & reports</li>
+                    <li><i class="fas fa-check-circle"></i> Manage product inventory</li>
+                    <li><i class="fas fa-check-circle"></i> Track orders & shipments</li>
+                    <li><i class="fas fa-check-circle"></i> Access marketing materials</li>
+                    <li><i class="fas fa-check-circle"></i> View commission statements</li>
+                    <li><i class="fas fa-check-circle"></i> Download partner resources</li>
+                </ul>
+            </div>
+            
+            <div class="divider">
+                <span>New to CIL Solar Partner Network?</span>
+            </div>
+            
+            <div class="apply-prompt">
+                <a href="file:///C:/Users/Admin/Desktop/cilsolar/partnership.html">Apply to Become a Partner →</a>
+                <p style="margin-top: 0.5rem; font-size: 0.75rem;">Join our trusted network of solar manufacturers and distributors</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div class="modal" id="forgotModal">
+    <div class="modal-content">
+        <div class="modal-close" onclick="closeForgotModal()">
+            <i class="fas fa-times"></i>
+        </div>
+        <h3>Reset Partner Password</h3>
+        <p>Enter your registered partner email address and we'll send you a link to reset your password.</p>
+        
+        <div class="form-group">
+            <label class="form-label">Partner Email</label>
+            <input type="email" class="form-control" id="resetEmail" placeholder="partner@company.com">
+        </div>
+        
+        <button class="btn-modal" onclick="sendResetLink()">Send Reset Link</button>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Company Info -->
+            <div class="footer-about">
+                <h3>CIL <span style="color: #f18f01;">Solar</span></h3>
+                <p>CIL Solar Energy Solutions is a division of Collaborative Investment Ltd, dedicated to professional management of solar energy across all sectors — from agribusiness to hospitality, IT to diaspora asset management.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../sectors.html">All Sectors</a></li>
+                    <li><a href="../shop.html">Shop Products</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../blog.html">Blog & News</a></li>
+                </ul>
+            </div>
+            
+            <!-- Key Sectors -->
+            <div class="footer-links">
+                <h4>Key Sectors</h4>
+                <ul>
+                    <li><a href="../sectors/agribusiness.html">Agribusiness</a></li>
+                    <li><a href="../sectors/betting-shops.html">Betting Shops</a></li>
+                    <li><a href="../sectors/places-of-worship.html">Places of Worship</a></li>
+                    <li><a href="../sectors/roadside-kiosks.html">Roadside Kiosks</a></li>
+                    <li><a href="../sectors/food-vendors.html">Food Vendors</a></li>
+                    <li><a href="../sectors/residential.html">Residential Homes</a></li>
+                    <li><a href="../sectors/hotel.html">Hotels & Hospitality</a></li>
+                </ul>
+            </div>
+            
+            <!-- Support -->
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="../partnership.html">Become a Partner</a></li>
+                    <li><a href="login.html">Partner Login</a></li>
+                    <li><a href="../account/register.html">Create Account</a></li>
+                    <li><a href="../account/login.html">Account Login</a></li>
+                    <li><a href="../faq.html">FAQs</a></li>
+                    <li><a href="../warranty.html">Warranty Info</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Us -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <span>0800 SOLAR CIL</span>
+                        <small>Mon-Fri, 8am - 6pm</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span>solar@cilholding.ng</span>
+                        <small>Sales & Support</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span>Lagos, Nigeria</span>
+                        <small>Head Office</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <span>Nationwide Installation</span>
+                        <small>We deliver across Nigeria</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter & Footer Bottom -->
+        <div class="footer-newsletter">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-text">
+                    <i class="fas fa-envelope"></i>
+                    <span>Get the latest solar news and offers</span>
+                </div>
+                <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 CIL Solar Energy Solutions — A Division of Collaborative Investment Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                    <a href="../terms-of-use.html">Terms of Use</a>
+                    <a href="../cookie-policy.html">Cookie Policy</a>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <span>Secure Payments:</span>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fas fa-university"></i>
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Demo partner credentials for testing
+    const demoPartners = [
+        { id: 'partner@imperiumsolar.com', password: 'imperium123', name: 'Imperium Solar', type: 'manufacturer' },
+        { id: 'partner@actolog.com', password: 'actolog123', name: 'Actolog Energy', type: 'manufacturer' },
+        { id: 'partner@fullmark.com', password: 'fullmark123', name: 'Fullmark Urja', type: 'distributor' },
+        { id: 'partner@nifue.com', password: 'nifue123', name: 'Nifue Solar', type: 'manufacturer' },
+        { id: 'PARTNER-001', password: 'demo123', name: 'Demo Partner', type: 'manufacturer' }
+    ];
+    
+    function togglePassword() {
+        const passwordField = document.getElementById('password');
+        const toggleBtn = document.querySelector('.toggle-password i');
+        
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            toggleBtn.classList.remove('fa-eye-slash');
+            toggleBtn.classList.add('fa-eye');
+        } else {
+            passwordField.type = 'password';
+            toggleBtn.classList.remove('fa-eye');
+            toggleBtn.classList.add('fa-eye-slash');
+        }
+    }
+    
+    function showError(message) {
+        const alert = document.getElementById('errorAlert');
+        const errorMsg = document.getElementById('errorMessage');
+        errorMsg.textContent = message;
+        alert.style.display = 'block';
+        
+        setTimeout(() => {
+            alert.style.display = 'none';
+        }, 5000);
+    }
+    
+    function handlePartnerLogin(event) {
+        event.preventDefault();
+        
+        const partnerId = document.getElementById('partnerId').value;
+        const password = document.getElementById('password').value;
+        const rememberMe = document.getElementById('rememberMe').checked;
+        
+        if (!partnerId || !password) {
+            showError('Please enter both Partner ID/Email and password.');
+            return false;
+        }
+        
+        // Find partner in demo list
+        const partner = demoPartners.find(p => p.id === partnerId && p.password === password);
+        
+        if (partner) {
+            // Successful login
+            const partnerSession = {
+                id: partner.id,
+                name: partner.name,
+                type: partner.type,
+                loggedIn: true,
+                timestamp: new Date().toISOString()
+            };
+            
+            if (rememberMe) {
+                localStorage.setItem('cilSolarPartnerRemembered', partnerId);
+            }
+            localStorage.setItem('cilSolarPartnerLoggedIn', 'true');
+            localStorage.setItem('cilSolarPartnerData', JSON.stringify(partnerSession));
+            
+            alert(`✅ Welcome back, ${partner.name}!\n\nYou have successfully logged into the CIL Solar Partner Portal.\n\nAccount Type: ${partner.type === 'manufacturer' ? 'Manufacturer' : 'Distributor'}\n\nYou will be redirected to your partner dashboard.`);
+            
+            // Redirect to partner dashboard
+            window.location.href = 'dashboard.html';
+        } else {
+            // Check if it's a valid format but wrong password
+            const existingPartner = demoPartners.find(p => p.id === partnerId);
+            if (existingPartner) {
+                showError('Incorrect password. Please try again.');
+            } else {
+                showError('Partner account not found. Please check your Partner ID or email, or apply to become a partner.');
+            }
+        }
+        
+        return false;
+    }
+    
+    function openForgotModal() {
+        document.getElementById('forgotModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeForgotModal() {
+        document.getElementById('forgotModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    function sendResetLink() {
+        const email = document.getElementById('resetEmail').value;
+        
+        if (!email) {
+            alert('Please enter your partner email address.');
+            return;
+        }
+        
+        // Check if email exists in demo list
+        const partnerExists = demoPartners.some(p => p.id === email);
+        
+        if (partnerExists) {
+            alert(`✅ Password reset link sent to ${email}\n\nPlease check your inbox and follow the instructions to reset your password.\n\nNote: Demo accounts use password: ${demoPartners.find(p => p.id === email).password}`);
+        } else {
+            alert(`⚠️ Email not found in our partner database.\n\nIf you are a CIL Solar partner, please contact support at partners@cilholding.ng\n\nOr apply to become a partner at cil-solar.com/partnership`);
+        }
+        
+        closeForgotModal();
+        document.getElementById('resetEmail').value = '';
+    }
+    
+    function subscribeNewsletter(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input').value;
+        alert(`✅ Subscribed!\n\n${email} has been added to our newsletter list. You'll receive updates on new products, promotions, and solar energy tips.`);
+        event.target.reset();
+        return false;
+    }
+    
+    // Check if partner is already logged in
+    document.addEventListener('DOMContentLoaded', function() {
+        const remembered = localStorage.getItem('cilSolarPartnerRemembered');
+        if (remembered) {
+            document.getElementById('partnerId').value = remembered;
+            document.getElementById('rememberMe').checked = true;
+        }
+        
+        // Check if already logged in
+        if (localStorage.getItem('cilSolarPartnerLoggedIn') === 'true') {
+            // Optional: Auto-redirect to dashboard
+            // window.location.href = 'dashboard.html';
+        }
+    });
+    
+    // Close modal on outside click
+    window.onclick = function(event) {
+        const modal = document.getElementById('forgotModal');
+        if (event.target === modal) {
+            closeForgotModal();
+        }
+    };
+    
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '80px';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '2rem';
+                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                navLinks.style.zIndex = '1000';
+            }
+        });
+    }
+    
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks) {
+            navLinks.style.display = '';
+            navLinks.style.flexDirection = '';
+            navLinks.style.position = '';
+            navLinks.style.padding = '';
+            navLinks.style.backgroundColor = '';
+            navLinks.style.boxShadow = '';
+        }
+    });
+</script>
+</body>
+</html>

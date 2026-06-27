@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/all.min.css">
+      <title>Partnership – CIL Solar Energy Solutions</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            line-height: 1.5;
+            overflow-x: hidden;
+            background: #fafbfc;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #0f2b5e;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: #0f2b5e;
+            margin-bottom: 1rem;
+        }
+        
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #64748b;
+            text-align: center;
+        }
+        
+        a {
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #f18f01 0%, #f59e0b 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(241, 143, 1, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #f18f01;
+            color: #f18f01;
+        }
+        
+        .btn-outline:hover {
+            background: #f18f01;
+            color: white;
+        }
+        
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn-secondary {
+            background: #0f2b5e;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #1e3a6b;
+            transform: translateY(-2px);
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+             background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(22px);
+            width: 100%;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0f2b5e;
+        }
+        
+        .logo-text span {
+            color: #f18f01;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .nav-links > a {
+            color: #475569;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        
+        .nav-links > a:hover, .nav-links > a.active {
+            color: #f18f01;
+        }
+        
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown > a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .dropdown > a i {
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        
+        .dropdown:hover > a i {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown:hover > a {
+            color: #f18f01;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+        
+        .dropdown-menu a i {
+            width: 20px;
+            color: #94a3b8;
+        }
+        
+        .dropdown-menu a:hover {
+            background: #fff7ed;
+            color: #f18f01;
+        }
+        
+        .dropdown-divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 0.5rem 0;
+        }
+        
+        .dropdown-section {
+            padding: 0.5rem 0;
+        }
+        
+        .dropdown-title {
+            padding: 0.5rem 1.25rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+        
+        .dropdown-menu-right {
+            left: auto;
+            right: 0;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0f2b5e;
+        }
+        
+        /* Cart Button */
+        .cart-btn {
+            position: relative;
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .cart-btn:hover {
+            background: #e2e8f0;
+        }
+        
+        .cart-count {
+            background: #f18f01;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+        }
+        
+        /* Hero Section */
+        .partnership-hero {
+            background: linear-gradient(135deg, #0f2b5e 0%, #1e4a7a 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .partnership-hero::before {
+            content: '🤝';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            font-size: 20rem;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .partnership-hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .partnership-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        /* Partnership Overview */
+        .overview-section {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .overview-content h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .overview-content p {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-box {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #f18f01;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        
+        /* Partner Manufacturers Section */
+        .manufacturers-section {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        
+        .manufacturers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .manufacturer-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .manufacturer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            border-color: #f18f01;
+        }
+        
+        .manufacturer-logo {
+            width: 100px;
+            height: 100px;
+            background: #fef3c7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: #f18f01;
+            font-size: 3rem;
+        }
+        
+        .manufacturer-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .manufacturer-card p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .manufacturer-products {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #e2e8f0;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            color: #475569;
+        }
+        
+        /* Partnership Benefits */
+        .benefits-section {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: #fef3c7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: #f18f01;
+            font-size: 1.8rem;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefit-card p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .step-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #f18f01;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        
+        .step-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-card p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        
+        /* Partner Form Section */
+        .partner-form-section {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .form-title h2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #f18f01;
+            box-shadow: 0 0 0 3px rgba(241, 143, 1, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-check input {
+            width: 1rem;
+            height: 1rem;
+            accent-color: #f18f01;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: #f18f01;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background: #e07d00;
+            transform: translateY(-2px);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: #b45309;
+        }
+        
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #92400e;
+        }
+        
+        .cart-sidebar.open { right: 0; }
+        .cart-header { padding: 1.5rem; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
+        .close-cart { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+        .cart-items { flex: 1; overflow-y: auto; padding: 1rem; }
+        .cart-footer { padding: 1.5rem; border-top: 1px solid #e2e8f0; }
+        .cart-total { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 1rem; }
+        .checkout-btn { width: 100%; padding: 0.75rem; background: #f18f01; color: white; border: none; border-radius: 8px; cursor: pointer; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; display: none; }
+        .overlay.active { display: block; }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .financing-grid, .sectors-grid, .solutions-grid, .parts-grid { grid-template-columns: repeat(2, 1fr); }
+            .investment-grid, .partnership-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            .menu-toggle { display: block; }
+            .nav-links { display: none; position: absolute; top: 80px; left: 0; right: 0; background: white; padding: 2rem; flex-direction: column; gap: 1rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 1000; }
+            .nav-links.active { display: flex; }
+            .hero h1 { font-size: 2rem; }
+            .financing-grid, .sectors-grid, .solutions-grid, .parts-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-wrap: wrap; justify-content: center; }
+            .cart-sidebar { width: 100%; right: -100%; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .newsletter-form { flex-direction: column; width: 100%; }
+            .newsletter-form input { width: 100%; }
+            .footer-bottom-links { flex-direction: column; gap: 0.5rem; align-items: center; }
+        }
+
+        /* Footer - Add the provided footer styles here */
+        /* [Footer styles from user - will be included at the end] */
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.jpeg" alt="CIL Solar" class="logo-img" style="border-radius: 70px;">
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="shop.html">Shop</a>
+                <a href="partnership.html" class="active">Partners</a>
+                <a href="contact.html">Contact</a>
+                
+                <div class="dropdown">
+                    <a href="#">Account <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="dropdown-section">
+                            <div class="dropdown-title">User</div>
+                            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            <a href="login.html"><i class="fas fa-user-plus"></i> Create Account</a>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-section">
+                            <div class="dropdown-title">Partners</div>
+                            <a href="patnerlogin.html"><i class="fas fa-building"></i> Partner Login</a>
+                            <a href="partnership.html" class="active"><i class="fas fa-handshake"></i> Become a Partner</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Cart Sidebar -->
+<div class="overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+        <p style="text-align: center; color: #64748b; padding: 2rem;">Your cart is empty</p>
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">₦0</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+<br> <br> <br>
+<section class="partnership-hero">
+    <div class="container">
+        <h1>Partner With CIL Solar</h1>
+        <p>Join our network of trusted solar manufacturers and distributors. We help you scale, maximize your products, and reach new markets across Nigeria.</p>
+    </div>
+</section>
+
+<!-- OVERVIEW SECTION -->
+<section class="overview-section">
+    <div class="container">
+        <div class="overview-grid">
+            <div class="overview-content">
+                <h2>Why Partner With Us?</h2>
+                <p>CIL Solar Energy Solutions partners with leading solar manufacturers to bring the best solar technology to Nigeria. We help manufacturers develop strategies to sell, scale, and maximize their products across 10+ sectors.</p>
+                <p>With our extensive network across agribusiness, hospitality, IT, property management, and more, we provide unparalleled market access and professional management of solar solutions.</p>
+                <div class="overview-stats">
+                    <div class="stat-box"><div class="stat-number">10+</div><div class="stat-label">Sectors Served</div></div>
+                    <div class="stat-box"><div class="stat-number">50+</div><div class="stat-label">Active Partners</div></div>
+                    <div class="stat-box"><div class="stat-number">5,000+</div><div class="stat-label">Installations</div></div>
+                    <div class="stat-box"><div class="stat-number">Nationwide</div><div class="stat-label">Distribution Network</div></div>
+                </div>
+            </div>
+            <div class="overview-image">
+                <div style="background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%); border-radius: 24px; padding: 2rem; text-align: center;">
+                    <i class="fas fa-handshake" style="font-size: 5rem; color: #f18f01; margin-bottom: 1rem;"></i>
+                    <p style="color: #b45309;">Trusted partnerships that deliver results</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARTNER MANUFACTURERS -->
+<section class="manufacturers-section">
+    <div class="container">
+        <h2 style="text-align: center;">Our Trusted Partners</h2>
+        <p class="section-intro">We partner with leading solar manufacturers to bring you the best products</p>
+        
+        <div class="manufacturers-grid">
+            <div class="manufacturer-card">
+                <div class="manufacturer-logo"><i class="fas fa-solar-panel"></i></div>
+                <h3>Imperium Solar</h3>
+                <p>Premium solar panels & inverters</p>
+                <span class="manufacturer-products">Panels, Inverters, Batteries</span>
+            </div>
+            <div class="manufacturer-card">
+                <div class="manufacturer-logo"><i class="fas fa-bolt"></i></div>
+                <h3>Actolog Energy</h3>
+                <p>Smart solar solutions & monitoring</p>
+                <span class="manufacturer-products">Monitoring Systems, Controllers</span>
+            </div>
+            <div class="manufacturer-card">
+                <div class="manufacturer-logo"><i class="fas fa-car-battery"></i></div>
+                <h3>Fullmark Urja</h3>
+                <p>Lithium batteries & storage</p>
+                <span class="manufacturer-products">Batteries, Storage Systems</span>
+            </div>
+            <div class="manufacturer-card">
+                <div class="manufacturer-logo"><i class="fas fa-industry"></i></div>
+                <h3>Nifue Solar</h3>
+                <p>Industrial solar solutions</p>
+                <span class="manufacturer-products">Commercial Systems, Industrial</span>
+            </div>
+            <div class="manufacturer-card">
+                <div class="manufacturer-logo"><i class="fas fa-charging-station"></i></div>
+                <h3>Infinity Tyres Group</h3>
+                <p>Solar accessories & mounting</p>
+                <span class="manufacturer-products">Mounts, Cables, Accessories</span>
+            </div>
+            <div class="manufacturer-card">
+                <div class="manufacturer-logo"><i class="fas fa-lightbulb"></i></div>
+                <h3>EcoPower Systems</h3>
+                <p>Solar lighting & appliances</p>
+                <span class="manufacturer-products">Lights, Fans, Appliances</span>
+            </div>
+            <div class="manufacturer-card">
+                <div class="manufacturer-logo"><i class="fas fa-microchip"></i></div>
+                <h3>SolarTech Africa</h3>
+                <p>Inverters & charge controllers</p>
+                <span class="manufacturer-products">Inverters, Controllers, Kits</span>
+            </div>
+            <div class="manufacturer-card">
+                <div class="manufacturer-logo"><i class="fas fa-shield-alt"></i></div>
+                <h3>SecureSolar</h3>
+                <p>Solar security solutions</p>
+                <span class="manufacturer-products">Security Cameras, Floodlights</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERSHIP BENEFITS -->
+<section class="benefits-section">
+    <div class="container">
+        <h2 style="text-align: center;">What We Offer Partners</h2>
+        <p class="section-intro">Comprehensive support to help you scale and succeed</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Market Access</h3>
+                <p>Access to 10+ sectors including agribusiness, hospitality, IT, and property management.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-store"></i></div>
+                <h3>Distribution Network</h3>
+                <p>Nationwide distribution through our established network and partner channels.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-chalkboard-user"></i></div>
+                <h3>Sales & Marketing Support</h3>
+                <p>Professional marketing, sales training, and promotional campaigns.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-truck-fast"></i></div>
+                <h3>Logistics & Installation</h3>
+                <p>End-to-end logistics, installation, and after-sales support.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                <h3>Financing Options</h3>
+                <p>Flexible payment terms and financing solutions for customers.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-chart-simple"></i></div>
+                <h3>Performance Analytics</h3>
+                <p>Real-time data on sales, installations, and market trends.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+    <div class="container">
+        <h2 style="text-align: center;">How Partnership Works</h2>
+        <p class="section-intro">Simple steps to start your partnership journey</p>
+        
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Apply Online</h3>
+                <p>Complete the partner application form with your company details.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Review & Discussion</h3>
+                <p>Our team reviews your application and discusses partnership opportunities.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Agreement & Onboarding</h3>
+                <p>Sign partnership agreement and get onboarded to our platform.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Start Scaling</h3>
+                <p>Begin selling through our network and scale your products.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARTNER APPLICATION FORM -->
+<section class="partner-form-section" id="partner-form">
+    <div class="container">
+        <div class="form-container">
+            <div class="form-title">
+                <h2>Become a Partner</h2>
+                <p>Join CIL Solar's trusted network of manufacturers and distributors</p>
+            </div>
+            
+            <form id="partnerForm" onsubmit="submitPartnerApplication(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Company Name *</label>
+                        <input type="text" class="form-control" id="companyName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company Type *</label>
+                        <select class="form-control" id="companyType" required>
+                            <option value="">Select company type</option>
+                            <option value="manufacturer">Solar Manufacturer</option>
+                            <option value="distributor">Distributor/Wholesaler</option>
+                            <option value="installer">Installation Partner</option>
+                            <option value="retailer">Retailer</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Contact Person *</label>
+                        <input type="text" class="form-control" id="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Position *</label>
+                        <input type="text" class="form-control" id="position" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone *</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Company Address *</label>
+                    <input type="text" class="form-control" id="address" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Products/Services *</label>
+                        <select class="form-control" id="products" required>
+                            <option value="">Select primary products</option>
+                            <option value="solar-panels">Solar Panels</option>
+                            <option value="batteries">Batteries & Storage</option>
+                            <option value="inverters">Inverters</option>
+                            <option value="complete-systems">Complete Systems</option>
+                            <option value="accessories">Accessories & Components</option>
+                            <option value="multiple">Multiple Categories</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Years in Business *</label>
+                        <select class="form-control" id="yearsBusiness" required>
+                            <option value="">Select years</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5-10">5-10 years</option>
+                            <option value="10+">10+ years</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Tell us about your company</label>
+                    <textarea class="form-control" id="description" rows="3" placeholder="Describe your company, products, and why you want to partner with CIL Solar..."></textarea>
+                </div>
+                
+                <div class="form-check">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">I agree to the <a href="#">Partner Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="btn-submit">Submit Application →</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Scale Your Solar Business?</h2>
+        <p>Join CIL Solar's partner network and access new markets across Nigeria.</p>
+        <a href="#partner-form" class="btn btn-primary btn-lg">Apply Now →</a>
+        <a href="contact.html" class="btn btn-outline btn-lg" style="margin-left: 1rem;">Contact Partnership Team</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Company Info -->
+            <div class="footer-about">
+                <h3>CIL <span style="color: #f18f01;">Solar</span></h3>
+                <p>CIL Solar Energy Solutions is a division of Collaborative Investment Ltd, dedicated to professional management of solar energy across all sectors — from agribusiness to hospitality, IT to diaspora asset management.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="sectors.html">All Sectors</a></li>
+                    <li><a href="shop.html">Shop Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog & News</a></li>
+                </ul>
+            </div>
+            
+            <!-- Key Sectors -->
+            <div class="footer-links">
+                <h4>Key Sectors</h4>
+                <ul>
+                    <li><a href="sectors/agribusiness.html">Agribusiness</a></li>
+                    <li><a href="sectors/betting-shops.html">Betting Shops</a></li>
+                    <li><a href="sectors/places-of-worship.html">Places of Worship</a></li>
+                    <li><a href="sectors/roadside-kiosks.html">Roadside Kiosks</a></li>
+                    <li><a href="sectors/food-vendors.html">Food Vendors</a></li>
+                    <li><a href="sectors/residential.html">Residential Homes</a></li>
+                    <li><a href="sectors/hotel.html">Hotels & Hospitality</a></li>
+                </ul>
+            </div>
+            
+            <!-- Support -->
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="partnership.html">Become a Partner</a></li>
+                    <li><a href="partner/login.html">Partner Login</a></li>
+                    <li><a href="account/register.html">Create Account</a></li>
+                    <li><a href="account/login.html">Account Login</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="warranty.html">Warranty Info</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Us -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <span>0800 SOLAR CIL</span>
+                        <small>Mon-Fri, 8am - 6pm</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span>solar@cilholding.ng</span>
+                        <small>Sales & Support</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span>Lagos, Nigeria</span>
+                        <small>Head Office</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <span>Nationwide Installation</span>
+                        <small>We deliver across Nigeria</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter & Footer Bottom -->
+        <div class="footer-newsletter">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-text">
+                    <i class="fas fa-envelope"></i>
+                    <span>Get the latest solar news and offers</span>
+                </div>
+                <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 CIL Solar Energy Solutions — A Division of Collaborative Investment Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <span>Secure Payments:</span>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fas fa-university"></i>
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Footer Styles */
+    .footer {
+        background: #0f2b5e;
+        color: white;
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr 1fr 1.5fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .footer-about h3, .footer-links h4, .footer-contact h4 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .footer-about p {
+        color: #94a3b8;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+        background: #f18f01;
+        transform: translateY(-3px);
+    }
+    
+    .footer-links ul {
+        list-style: none;
+    }
+    
+    .footer-links ul li {
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-links ul li a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+    }
+    
+    .footer-links ul li a:hover {
+        color: #f18f01;
+    }
+    
+    .footer-contact .contact-item {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        color: #94a3b8;
+        font-size: 0.9rem;
+    }
+    
+    .footer-contact .contact-item i {
+        color: #f18f01;
+        width: 20px;
+        margin-top: 0.2rem;
+    }
+    
+    .footer-contact .contact-item small {
+        display: block;
+        font-size: 0.7rem;
+        opacity: 0.7;
+        margin-top: 0.2rem;
+    }
+    
+    .footer-newsletter {
+        margin-top: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .newsletter-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .newsletter-text {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #94a3b8;
+        font-size: 0.9rem;
+    }
+    
+    .newsletter-text i {
+        color: #f18f01;
+        font-size: 1.2rem;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .newsletter-form input {
+        padding: 0.6rem 1rem;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        width: 250px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    
+    .newsletter-form input::placeholder {
+        color: #94a3b8;
+    }
+    
+    .newsletter-form button {
+        padding: 0.6rem 1.2rem;
+        background: #f18f01;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        color: white;
+        transition: all 0.3s;
+    }
+    
+    .newsletter-form button:hover {
+        background: #e07d00;
+        transform: translateY(-2px);
+    }
+    
+    .footer-bottom {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-bottom-content p {
+        color: #64748b;
+        font-size: 0.8rem;
+    }
+    
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    .footer-bottom-links a {
+        color: #94a3b8;
+        font-size: 0.8rem;
+        text-decoration: none;
+    }
+    
+    .footer-bottom-links a:hover {
+        color: #f18f01;
+    }
+    
+    .payment-methods {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #94a3b8;
+    }
+    
+    .payment-methods i {
+        font-size: 1.2rem;
+        margin-left: 0.75rem;
+        color: #94a3b8;
+        transition: color 0.3s;
+    }
+    
+    .payment-methods i:hover {
+        color: #f18f01;
+    }
+    
+    /* Cart Sidebar */
+    .cart-sidebar {
+        position: fixed;
+        top: 0;
+        right: -400px;
+        width: 400px;
+        height: 100vh;
+        background: white;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        transition: right 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .cart-sidebar.open {
+        right: 0;
+    }
+    
+    .cart-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .close-cart {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .cart-items {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1rem;
+    }
+    
+    .cart-footer {
+        padding: 1.5rem;
+        border-top: 1px solid #e2e8f0;
+    }
+    
+    .cart-total {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    
+    .checkout-btn {
+        width: 100%;
+        padding: 0.75rem;
+        background: #f18f01;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: none;
+    }
+    
+    .overlay.active {
+        display: block;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .manufacturers-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .benefits-grid, .steps-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .overview-grid {
+            grid-template-columns: 1fr;
+        }
+        .newsletter-wrapper {
+            flex-direction: column;
+            text-align: center;
+        }
+        .footer-bottom-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        .footer-bottom-links {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+        .manufacturers-grid {
+            grid-template-columns: 1fr;
+        }
+        .benefits-grid, .steps-grid {
+            grid-template-columns: 1fr;
+        }
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+        .newsletter-form {
+            flex-direction: column;
+            width: 100%;
+        }
+        .newsletter-form input {
+            width: 100%;
+        }
+        .cart-sidebar {
+            width: 100%;
+            right: -100%;
+        }
+    }
+</style>
+
+<script>
+    // Cart functionality
+    let cart = [];
+    
+    function loadCart() {
+        const savedCart = localStorage.getItem('cilSolarCart');
+        if (savedCart) {
+            cart = JSON.parse(savedCart);
+            updateCartDisplay();
+        }
+    }
+    
+    function saveCart() {
+        localStorage.setItem('cilSolarCart', JSON.stringify(cart));
+    }
+    
+    function updateCartDisplay() {
+        const cartItemsDiv = document.getElementById('cartItems');
+        const cartTotalSpan = document.getElementById('cartTotal');
+        const cartCountSpan = document.getElementById('cartCount');
+        
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        
+        cartCountSpan.textContent = itemCount;
+        cartTotalSpan.textContent = `₦${total.toLocaleString()}`;
+        
+        if (cart.length === 0) {
+            cartItemsDiv.innerHTML = '<p style="text-align: center; color: #64748b; padding: 2rem;">Your cart is empty</p>';
+            return;
+        }
+        
+        cartItemsDiv.innerHTML = cart.map(item => `
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                <div style="flex:1">
+                    <div style="font-weight:600">${item.name}</div>
+                    <div style="font-size:0.8rem; color:#f18f01;">₦${item.price.toLocaleString()}</div>
+                    <div style="display:flex; gap:0.5rem; margin-top:0.5rem;">
+                        <button style="width:24px; height:24px; background:#f1f5f9; border:none; border-radius:4px; cursor:pointer;" onclick="updateQuantity('${item.name}', -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button style="width:24px; height:24px; background:#f1f5f9; border:none; border-radius:4px; cursor:pointer;" onclick="updateQuantity('${item.name}', 1)">+</button>
+                        <button style="width:24px; height:24px; background:#fee2e2; border:none; border-radius:4px; cursor:pointer;" onclick="removeItem('${item.name}')"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                <div style="font-weight:600;">₦${(item.price * item.quantity).toLocaleString()}</div>
+            </div>
+        `).join('');
+    }
+    
+    function updateQuantity(name, change) {
+        const item = cart.find(i => i.name === name);
+        if (item) {
+            item.quantity += change;
+            if (item.quantity <= 0) {
+                cart = cart.filter(i => i.name !== name);
+            }
+            saveCart();
+            updateCartDisplay();
+        }
+    }
+    
+    function removeItem(name) {
+        cart = cart.filter(i => i.name !== name);
+        saveCart();
+        updateCartDisplay();
+    }
+    
+    function toggleCart() {
+        const cartSidebar = document.getElementById('cartSidebar');
+        const overlay = document.getElementById('cartOverlay');
+        cartSidebar.classList.toggle('open');
+        overlay.classList.toggle('active');
+    }
+    
+    function checkout() {
+        if (cart.length === 0) {
+            alert('Your cart is empty.');
+            return;
+        }
+        alert('Proceeding to checkout. Total: ₦' + cart.reduce((sum, i) => sum + (i.price * i.quantity), 0).toLocaleString());
+    }
+    
+    // Partner Application
+    function submitPartnerApplication(event) {
+        event.preventDefault();
+        
+        const companyName = document.getElementById('companyName').value;
+        const companyType = document.getElementById('companyType').value;
+        const contactName = document.getElementById('contactName').value;
+        const email = document.getElementById('email').value;
+        
+        if (!companyName || !companyType || !contactName || !email) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        alert(`✅ Partnership Application Submitted!\n\nThank you ${contactName} from ${companyName} for your interest in partnering with CIL Solar.\n\nOur partnership team will review your application and contact you within 48 hours.\n\nApplication Details:\n- Company: ${companyName}\n- Type: ${companyType}\n- Contact: ${contactName}\n- Email: ${email}\n\nWe look forward to working with you!`);
+        
+        // Reset form
+        document.getElementById('partnerForm').reset();
+    }
+    
+    function subscribeNewsletter(event) {
+        event.preventDefault();
+        const email = event.target.querySelector('input').value;
+        alert(`✅ Subscribed!\n\n${email} has been added to our newsletter list. You'll receive updates on new products, promotions, and solar energy tips.`);
+        event.target.reset();
+        return false;
+    }
+    
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '80px';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '2rem';
+                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                navLinks.style.zIndex = '1000';
+            }
+        });
+    }
+    
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks) {
+            navLinks.style.display = '';
+            navLinks.style.flexDirection = '';
+            navLinks.style.position = '';
+            navLinks.style.padding = '';
+            navLinks.style.backgroundColor = '';
+            navLinks.style.boxShadow = '';
+        }
+    });
+    
+    // Load cart on page load
+    document.addEventListener('DOMContentLoaded', loadCart);
+</script>
+</body>
+</html>
